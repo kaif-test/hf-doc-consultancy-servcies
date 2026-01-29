@@ -1,9 +1,16 @@
-import { ArrowRight, Shield, Clock, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, Clock, CheckCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToServices = () => {
+    const element = document.querySelector("#services");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -23,7 +30,7 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-6 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
             <span className="text-sm font-medium text-primary-foreground/90">
-              Your Trusted Documentation Partner
+              HF DOC CONSULTANCY SERVICES
             </span>
           </div>
 
@@ -36,7 +43,7 @@ const Hero = () => {
           {/* Description */}
           <p className="text-base sm:text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8 animate-slide-up" style={{ animationDelay: "0.1s" }}>
             We simplify the process of obtaining essential documents like Passports, 
-            Birth Certificates, PAN Cards, Voter IDs, and more. Expert guidance at every step.
+            Ration Cards, Income Certificates, PAN Cards, Voter IDs, and more. Expert guidance at every step.
           </p>
 
           {/* CTA Buttons */}
@@ -44,7 +51,7 @@ const Hero = () => {
             <Button 
               onClick={scrollToContact}
               size="lg"
-              className="w-full sm:w-auto gold-gradient text-accent-foreground font-semibold px-8 py-6 text-base hover:opacity-90 transition-opacity"
+              className="w-full sm:w-auto gold-gradient text-accent-foreground font-bold px-8 py-6 text-base hover:opacity-90 hover:scale-105 transition-all shadow-lg"
             >
               Get Free Consultation
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -52,8 +59,8 @@ const Hero = () => {
             <Button 
               variant="outline"
               size="lg"
-              onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}
-              className="w-full sm:w-auto border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-base"
+              onClick={scrollToServices}
+              className="w-full sm:w-auto border-2 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/60 px-8 py-6 text-base font-semibold transition-all"
             >
               View Services
             </Button>
@@ -64,12 +71,25 @@ const Hero = () => {
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="flex items-center gap-2 text-primary-foreground/80"
+                className="flex items-center gap-2 text-primary-foreground/90 bg-primary-foreground/5 px-4 py-2 rounded-full border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-colors cursor-default"
               >
                 <feature.icon className="w-5 h-5 text-accent" />
-                <span className="text-sm font-medium">{feature.text}</span>
+                <span className="text-sm font-semibold">{feature.text}</span>
               </div>
             ))}
+          </div>
+
+          {/* Quick Contact */}
+          <div className="mt-10 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <a 
+              href="tel:+919876543210"
+              className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors group"
+            >
+              <div className="p-2 rounded-full bg-accent/20 group-hover:bg-accent/30 transition-colors">
+                <Phone className="w-4 h-4 text-accent" />
+              </div>
+              <span className="text-sm font-medium">Call us: +91 98765 43210</span>
+            </a>
           </div>
         </div>
       </div>
