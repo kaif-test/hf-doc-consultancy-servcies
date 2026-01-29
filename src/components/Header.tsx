@@ -28,11 +28,11 @@ const Header = () => {
           <a 
             href="#home" 
             onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }}
-            className="flex items-center gap-2 text-primary font-serif font-bold text-lg sm:text-xl"
+            className="flex items-center gap-2 text-primary font-serif font-bold text-base sm:text-lg lg:text-xl"
           >
             <FileText className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
-            <span className="hidden xs:inline">DocuAssist</span>
-            <span className="xs:hidden">DocuAssist</span>
+            <span className="hidden sm:inline">HF DOC CONSULTANCY</span>
+            <span className="sm:hidden">HF DOC</span>
           </a>
 
           {/* Desktop Navigation */}

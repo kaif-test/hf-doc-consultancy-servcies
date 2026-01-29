@@ -1,4 +1,4 @@
-import { FileText, Phone, Mail, MapPin } from "lucide-react";
+import { FileText, Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,6 +17,8 @@ const Footer = () => {
     "Voter ID Card",
     "Senior Citizen Card",
     "PAN Card",
+    "Ration Card",
+    "Income Certificate",
   ];
 
   const scrollToSection = (href: string) => {
@@ -35,18 +37,18 @@ const Footer = () => {
             <a 
               href="#home" 
               onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }}
-              className="flex items-center gap-2 font-serif font-bold text-xl mb-4"
+              className="flex items-center gap-2 font-serif font-bold text-lg mb-4 hover:text-accent transition-colors"
             >
               <FileText className="w-6 h-6 text-accent" />
-              DocuAssist
+              HF DOC CONSULTANCY
             </a>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-4">
               Your trusted partner for government documentation services. 
               We simplify the process so you don't have to worry.
             </p>
-            <div className="flex items-center gap-2 text-sm text-primary-foreground/70">
+            <div className="flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-accent transition-colors cursor-pointer">
               <MapPin className="w-4 h-4 text-accent" />
-              <span>123 Main Street, City, State</span>
+              <span>Malad, Mumbai, Maharashtra</span>
             </div>
           </div>
 
@@ -59,8 +61,9 @@ const Footer = () => {
                   <a
                     href={link.href}
                     onClick={(e) => { e.preventDefault(); scrollToSection(link.href); }}
-                    className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+                    className="text-sm text-primary-foreground/70 hover:text-accent transition-colors flex items-center gap-1 group"
                   >
+                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.name}
                   </a>
                 </li>
@@ -74,9 +77,12 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-sm text-primary-foreground/70">
+                  <button
+                    onClick={() => scrollToSection("#services")}
+                    className="text-sm text-primary-foreground/70 hover:text-accent transition-colors text-left"
+                  >
                     {service}
-                  </span>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -86,18 +92,33 @@ const Footer = () => {
           <div>
             <h4 className="font-serif font-bold text-lg mb-4">Contact Us</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-accent" />
-                <span className="text-sm text-primary-foreground/70">+91 98765 43210</span>
+              <li>
+                <a 
+                  href="tel:+919876543210" 
+                  className="flex items-center gap-3 hover:text-accent transition-colors group"
+                >
+                  <div className="p-2 rounded-lg bg-primary-foreground/10 group-hover:bg-accent/20 transition-colors">
+                    <Phone className="w-4 h-4 text-accent" />
+                  </div>
+                  <span className="text-sm text-primary-foreground/70 group-hover:text-accent">+91 98765 43210</span>
+                </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-accent" />
-                <span className="text-sm text-primary-foreground/70">info@docuassist.com</span>
+              <li>
+                <a 
+                  href="mailto:info@hfdocconsultancy.com" 
+                  className="flex items-center gap-3 hover:text-accent transition-colors group"
+                >
+                  <div className="p-2 rounded-lg bg-primary-foreground/10 group-hover:bg-accent/20 transition-colors">
+                    <Mail className="w-4 h-4 text-accent" />
+                  </div>
+                  <span className="text-sm text-primary-foreground/70 group-hover:text-accent">info@hfdocconsultancy.com</span>
+                </a>
               </li>
             </ul>
-            <div className="mt-6 p-4 rounded-lg bg-primary-foreground/5 border border-primary-foreground/10">
-              <p className="text-sm font-medium mb-1">Office Hours</p>
+            <div className="mt-6 p-4 rounded-lg bg-primary-foreground/5 border border-primary-foreground/10 hover:border-accent/30 transition-colors">
+              <p className="text-sm font-semibold mb-1">Office Hours</p>
               <p className="text-xs text-primary-foreground/60">Mon - Sat: 9AM - 6PM</p>
+              <p className="text-xs text-primary-foreground/60">Sunday: Closed</p>
             </div>
           </div>
         </div>
@@ -105,8 +126,8 @@ const Footer = () => {
         {/* Divider */}
         <div className="border-t border-primary-foreground/10 mt-10 pt-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-primary-foreground/60">
-            <p>© {currentYear} DocuAssist. All rights reserved.</p>
-            <p className="text-xs text-center sm:text-right">
+            <p>© {currentYear} HF DOC CONSULTANCY SERVICES. All rights reserved.</p>
+            <p className="text-xs text-center sm:text-right max-w-md">
               Disclaimer: We are a documentation assistance service and not affiliated with any government agency.
             </p>
           </div>
