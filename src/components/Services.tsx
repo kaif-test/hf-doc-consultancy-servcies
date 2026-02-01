@@ -313,10 +313,10 @@ const Services = () => {
             <CardContent>
               <Tabs defaultValue="regular" className="w-full">
                 <TabsList className="grid w-full grid-cols-2 mb-6">
-                  <TabsTrigger value="regular" className="font-semibold">
+                  <TabsTrigger value="regular" className="font-semibold text-wrap lg:text-nowrap">
                     A. Regular Case (Person Alive)
                   </TabsTrigger>
-                  <TabsTrigger value="demise" className="font-semibold">
+                  <TabsTrigger value="demise" className="font-semibold text-wrap lg:text-nowrap">
                     B. Demise Case (Deceased)
                   </TabsTrigger>
                 </TabsList>
