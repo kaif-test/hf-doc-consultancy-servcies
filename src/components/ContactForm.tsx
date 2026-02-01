@@ -109,7 +109,7 @@ const ContactForm = () => {
   };
 
   const contactInfo = [
-    { icon: Phone, label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210" },
+    { icon: Phone, label: "Phone", value: "+91 82913 22540", href: "tel:+91 82913 22540" },
     { icon: Mail, label: "Email", value: "info@hfdocconsultancy.com", href: "mailto:info@hfdocconsultancy.com" },
     { icon: MapPin, label: "Office", value: "Malad, Mumbai, Maharashtra", href: null },
   ];

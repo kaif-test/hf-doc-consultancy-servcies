@@ -93,7 +93,7 @@ const Hero = () => {
           {/* Quick Contact */}
           <div className="mt-10 animate-fade-in" style={{ animationDelay: "0.4s" }}>
             <a 
-              href="tel:+919876543210"
+              href="tel:+918291322540"
               className="inline-flex items-center gap-2 text-primary hover:text-accent transition-colors group bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm"
             >
               <div className="p-2 rounded-full bg-accent/30 group-hover:bg-accent/50 transition-colors">

@@ -94,7 +94,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a 
-                  href="tel:+919876543210" 
+                  href="tel:+918291322540" 
                   className="flex items-center gap-3 hover:text-accent transition-colors group"
                 >
                   <div className="p-2 rounded-lg bg-primary-foreground/10 group-hover:bg-accent/20 transition-colors">
