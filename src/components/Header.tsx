@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Menu, X, FileText } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,11 +29,13 @@ const Header = () => {
           <a 
             href="#home" 
             onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }}
-            className="flex items-center gap-2 text-primary font-serif font-bold text-base sm:text-lg lg:text-xl"
+            className="flex items-center"
           >
-            <FileText className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
-            <span className="hidden sm:inline">HF DOC CONSULTANCY</span>
-            <span className="sm:hidden">HF DOC</span>
+            <img 
+              src={logo} 
+              alt="HF DOC CONSULTANCY SERVICES" 
+              className="h-12 sm:h-14 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Navigation */}

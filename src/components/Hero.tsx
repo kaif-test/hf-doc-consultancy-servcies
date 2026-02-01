@@ -1,5 +1,6 @@
 import { ArrowRight, Shield, Clock, CheckCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -23,9 +24,20 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="hero-gradient min-h-[90vh] flex items-center pt-16">
-      <div className="container-custom section-padding">
-        <div className="max-w-3xl mx-auto text-center">
+    <section 
+      id="home" 
+      className="relative min-h-[90vh] flex items-center pt-16 overflow-hidden"
+    >
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        <div className="absolute inset-0 bg-primary/85"></div>
+      </div>
+      
+      <div className="container-custom section-padding relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-6 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
@@ -40,10 +52,9 @@ const Hero = () => {
             <span className="block text-gradient-gold mt-2">Assistance Services</span>
           </h1>
 
-          {/* Description */}
-          <p className="text-base sm:text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8 animate-slide-up" style={{ animationDelay: "0.1s" }}>
-            We simplify the process of obtaining essential documents like Passports, 
-            Ration Cards, Income Certificates, PAN Cards, Voter IDs, and more. Expert guidance at every step.
+          {/* Description - Exact text provided */}
+          <p className="text-sm sm:text-base md:text-lg text-primary-foreground/90 max-w-3xl mx-auto mb-8 animate-slide-up leading-relaxed" style={{ animationDelay: "0.1s" }}>
+            HF DOC CONSULTANCY SERVICES is a professional documentation service provider dedicated to assisting individuals with government-related documents and applications. We offer reliable support for services such as Passport application and renewal, Aadhaar card enrollment and updates, PAN card services, Voter ID assistance, and other online government forms. Our goal is to make the documentation process simple, accurate, and hassle-free for our clients by providing expert guidance, timely service, and complete assistance at every step. We focus on customer satisfaction, transparency, and efficiency, ensuring that all documents are prepared and submitted correctly as per government guidelines.
           </p>
 
           {/* CTA Buttons */}
