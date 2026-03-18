@@ -282,7 +282,7 @@ const ContactForm = () => {
                   </div>
 
                   {/* File Upload Section */}
-                  <div className="space-y-3">
+                  {/* <div className="space-y-3">
                     <Label className="font-semibold">Upload Documents (Optional)</Label>
                     <div 
                       onClick={handleFileUpload}
@@ -319,7 +319,7 @@ const ContactForm = () => {
                         ))}
                       </div>
                     )}
-                  </div>
+                  </div> */}
 
                   <Button
                     type="submit"
