@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import emailjs from '@emailjs/browser';
 import {
   Select,
   SelectContent,
@@ -12,6 +13,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+
+const SERVICE_ID = "service_zjn3qyj"
+const TEMPLATE_ID = "template_7dw0kyo"
+const PUBLIC_ID = "6IHDLgkf7fBTgSJwg"
 
 interface UploadedFile {
   name: string;
@@ -84,8 +89,19 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
+    try {
+        await emailjs.sendForm(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          e.target as HTMLFormElement,
+          PUBLIC_ID
+        );
+        alert("Sent!");
+      } catch (error) {
+        console.log("Error:- ", error);
+        alert("Failed: " + error.text);
+      }
+     
     setIsSubmitting(false);
     setIsSubmitted(true);
     
