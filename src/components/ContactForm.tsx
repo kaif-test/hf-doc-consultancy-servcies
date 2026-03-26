@@ -260,6 +260,8 @@ const ContactForm = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="purpose" className="font-semibold">Purpose of Inquiry *</Label>
+                    
+                    <input type="hidden" name="purpose" value={formData.purpose} />
                     <Select
                       value={formData.purpose}
                       onValueChange={(value) =>
@@ -300,10 +302,10 @@ const ContactForm = () => {
                   {/* File Upload Section */}
                   {/* <div className="space-y-3">
                     <Label className="font-semibold">Upload Documents (Optional)</Label>
-                    <div 
+                      <div 
                       onClick={handleFileUpload}
                       className="border-2 border-dashed border-border hover:border-primary/50 rounded-lg p-6 text-center cursor-pointer transition-colors hover:bg-primary/5"
-                    >
+                      >
                       <Upload className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
                       <p className="text-sm font-medium text-foreground">Click to upload documents</p>
                       <p className="text-xs text-muted-foreground mt-1">PDF, JPG, PNG, DOC up to 10MB each</p>
